@@ -47,7 +47,7 @@ class LinkedList
 
   def get(key)
     self.each do |node|
-      return node.key if node.key == key
+      return node.val if node.key == key
     end
     nil
   end
@@ -69,7 +69,11 @@ class LinkedList
   end
 
   def update(key, val)
-    
+    self.each do |node|
+      if node.key == key
+        node.val = val
+      end
+    end
   end
 
   def remove(key)
@@ -85,7 +89,7 @@ class LinkedList
 
   def each(&prc)
     curr = @head.next
-    until curr.next == @tail
+    until curr == @tail
       prc.call(curr)
       curr = curr.next
     end
