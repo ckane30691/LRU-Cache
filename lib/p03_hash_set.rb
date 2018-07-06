@@ -1,5 +1,7 @@
 require_relative 'p02_hashing'
 
+# Similar to ResizingIntSet except this time we hash a key to an int
+# before modding and putting it into our array bucket
 class HashSet
   attr_reader :count
 

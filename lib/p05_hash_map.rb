@@ -1,6 +1,8 @@
 require_relative 'p02_hashing'
 require_relative 'p04_linked_list'
 
+# Like a hash set but with a linked list at each index of our
+# array
 class HashMap
 
   include Enumerable

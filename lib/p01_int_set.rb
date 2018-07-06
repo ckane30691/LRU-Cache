@@ -1,3 +1,5 @@
+# Set based on range 0 to the max.  Indicies are set to true if the number
+# exists in the set otherwise it's set to false.
 class MaxIntSet
   def initialize(max, num_buckets = 20)
     @max = max
@@ -28,7 +30,9 @@ class MaxIntSet
   end
 end
 
-
+# Similar idea to MaxIntSet only this time we store a sub array at each index
+# instead of true or false values.  We also modulo by the number of buckets
+# for numbers that are larger than our array.
 class IntSet
   def initialize(num_buckets = 20)
     @store = Array.new(num_buckets) { Array.new }
@@ -62,6 +66,9 @@ class IntSet
   end
 end
 
+# This time we want to keep our num buckets in step with the num of items
+# when the number of items is too big we resize our array and double the
+# num of buckets
 class ResizingIntSet
   attr_reader :count
 
